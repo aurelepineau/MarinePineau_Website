@@ -63,6 +63,8 @@ export const metadata: Metadata = {
   },
 };
 
+import { LanguageProvider } from "@/context/LanguageContext";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -73,8 +75,10 @@ export default function RootLayout({
       <body
         className={`${openSans.variable} ${montserrat.variable} antialiased bg-marine-beige text-marine-text`}
       >
-        <Navbar />
-        <main className="min-h-screen pt-20">{children}</main>
+        <LanguageProvider>
+          <Navbar />
+          <main className="min-h-screen pt-20">{children}</main>
+        </LanguageProvider>
       </body>
     </html>
   );

@@ -1,11 +1,12 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import { content } from "@/lib/content";
+import { useTranslation } from "@/context/LanguageContext";
 import Image from "next/image";
 import { Mail, Linkedin, Calendar } from "lucide-react";
 
 export default function ContactSection() {
+  const { t } = useTranslation();
   const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 40 },
     visible: {
@@ -31,7 +32,7 @@ export default function ContactSection() {
           variants={fadeInUp}
         >
           <h2 className="text-6xl md:text-[10rem] font-black uppercase tracking-tighter mb-12 leading-none opacity-90">
-            {content.contact.title}
+            {t.contact.title}
           </h2>
         </motion.div>
 
@@ -56,23 +57,23 @@ export default function ContactSection() {
           {/* Right Column: Content */}
           <div className="text-left flex flex-col justify-center">
             <p className="text-2xl font-bold mb-8 leading-relaxed">
-              {content.contact.text.split("\n").map((line, i) => (
+              {t.contact.text.split("\n").map((line, i) => (
                 <span key={i}>
                   {line}
-                  {i < content.contact.text.split("\n").length - 1 && <br />}
+                  {i < t.contact.text.split("\n").length - 1 && <br />}
                 </span>
               ))}
             </p>
             <p className="text-xl mb-2 font-medium text-marine-yellow">
-              {content.contact.name}
+              {t.contact.name}
             </p>
 
             <div className="space-y-4 mt-8 mb-8">
               <a
-                href={`mailto:${content.contact.email}`}
+                href="mailto:marine.pineau.f@gmail.com"
                 className="flex items-center text-xl font-light hover:text-marine-yellow transition-colors"
               >
-                <Mail className="mr-4 w-6 h-6" /> {content.contact.email}
+                <Mail className="mr-4 w-6 h-6" /> marine.pineau.f@gmail.com
               </a>
             </div>
 
@@ -83,13 +84,13 @@ export default function ContactSection() {
                 rel="noopener noreferrer"
                 className="w-full flex items-center justify-center px-8 py-4 bg-white text-marine-blue font-bold rounded-2xl hover:bg-marine-beige transition-all transform hover:scale-105 shadow-lg text-lg"
               >
-                <Linkedin className="mr-3" /> Linkedin
+                <Linkedin className="mr-3" /> {t.contact.links.linkedin}
               </a>
               <a
                 href="#"
                 className="w-full flex items-center justify-center px-8 py-4 bg-marine-yellow text-marine-text font-bold rounded-2xl hover:bg-marine-yellow/90 transition-all transform hover:scale-105 shadow-lg text-lg"
               >
-                <Calendar className="mr-3" /> Prendre RDV
+                <Calendar className="mr-3" /> {t.contact.links.appointment}
               </a>
             </div>
           </div>

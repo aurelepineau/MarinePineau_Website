@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import { content } from "@/lib/content";
+import { useTranslation } from "@/context/LanguageContext";
 import ProcessStep from "@/components/ProcessStep";
 import {
   Ear,
@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 
 export default function MethodologySection() {
+  const { t } = useTranslation();
   const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 40 },
     visible: {
@@ -56,7 +57,7 @@ export default function MethodologySection() {
             variants={fadeInUp}
             className="text-5xl md:text-7xl font-black text-marine-blue mb-6 uppercase"
           >
-            {content.methodology.title}
+            {t.methodology.title}
           </motion.h2>
           <motion.p
             initial="hidden"
@@ -65,10 +66,10 @@ export default function MethodologySection() {
             variants={fadeInUp}
             className="text-xl max-w-3xl mx-auto opacity-70"
           >
-            {content.methodology.subtitle.split("\n").map((line, i) => (
+            {t.methodology.subtitle.split("\n").map((line, i) => (
               <span key={i}>
                 {line}
-                {i < content.methodology.subtitle.split("\n").length - 1 && (
+                {i < t.methodology.subtitle.split("\n").length - 1 && (
                   <br />
                 )}
               </span>
@@ -103,12 +104,12 @@ export default function MethodologySection() {
           {/* MOBILE VERTICAL LINE */}
           <div className="md:hidden absolute top-0 bottom-0 left-8 w-1 bg-marine-blue/20 rounded-full"></div>
 
-          {content.methodology.steps.map((step, index) => (
+          {t.methodology.steps.map((step, index) => (
             <ProcessStep
               key={index}
               number={step.number}
               title={step.title}
-              isLast={index === content.methodology.steps.length - 1}
+              isLast={index === t.methodology.steps.length - 1}
               icon={methodologyIcons[index] || Lightbulb}
               colorClass={methodologyColors[index]}
               position={index % 2 === 0 ? "top" : "bottom"}

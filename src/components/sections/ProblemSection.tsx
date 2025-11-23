@@ -1,10 +1,11 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import { content } from "@/lib/content";
+import { useTranslation } from "@/context/LanguageContext";
 import { TrendingUp, Heart } from "lucide-react";
 
 export default function ProblemSection() {
+  const { t } = useTranslation();
   const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 40 },
     visible: {
@@ -25,7 +26,7 @@ export default function ProblemSection() {
           className="text-center mb-20"
         >
           <h2 className="text-4xl md:text-5xl font-black text-marine-pink uppercase leading-tight mb-4">
-            {content.problem.title}
+            {t.problem.title}
           </h2>
           <div className="w-20 h-1.5 bg-marine-blue/50 mx-auto rounded-full"></div>
         </motion.div>
@@ -51,12 +52,12 @@ export default function ProblemSection() {
                   <TrendingUp size={24} />
                 </div>
                 <h3 className="text-xl font-bold uppercase tracking-wide text-marine-text">
-                  {content.problem.cards[0].title}
+                  {t.problem.cards[0].title}
                 </h3>
               </div>
 
               <ul className="space-y-4 relative z-10">
-                {content.problem.cards[0].items.map((item, i) => (
+                {t.problem.cards[0].items.map((item, i) => (
                   <li
                     key={i}
                     className="flex items-center text-lg text-marine-text/80"
@@ -76,13 +77,13 @@ export default function ProblemSection() {
               className="bg-white p-8 rounded-3xl shadow-sm text-center md:text-left border border-marine-yellow/20"
             >
               <p className="text-3xl md:text-4xl font-black text-marine-blue mb-4 leading-none tracking-tighter">
-                {content.problem.stats[0].value}
+                {t.problem.stats[0].value}
               </p>
               <p className="text-base text-marine-text/80 italic mb-2 leading-relaxed">
-                &quot;{content.problem.stats[0].text}&quot;
+                &quot;{t.problem.stats[0].text}&quot;
               </p>
               <p className="text-xs uppercase font-bold text-marine-yellow tracking-widest mt-4 pt-2 border-t border-gray-100">
-                {content.problem.stats[0].source}
+                {t.problem.stats[0].source}
               </p>
             </motion.div>
           </div>
@@ -107,12 +108,12 @@ export default function ProblemSection() {
                   <Heart size={24} />
                 </div>
                 <h3 className="text-xl font-bold uppercase tracking-wide text-marine-text">
-                  {content.problem.cards[1].title}
+                  {t.problem.cards[1].title}
                 </h3>
               </div>
 
               <ul className="space-y-4 relative z-10">
-                {content.problem.cards[1].items.map((item, i) => (
+                {t.problem.cards[1].items.map((item, i) => (
                   <li
                     key={i}
                     className="flex items-center text-lg text-marine-text/80"
@@ -133,13 +134,13 @@ export default function ProblemSection() {
               className="bg-white p-8 rounded-3xl shadow-sm text-center md:text-left border border-marine-text/20"
             >
               <p className="text-3xl md:text-4xl font-black text-marine-blue mb-4 leading-none tracking-tighter">
-                {content.problem.stats[1].value}
+                {t.problem.stats[1].value}
               </p>
               <p className="text-base text-marine-text/80 italic mb-2 leading-relaxed">
-                &quot;{content.problem.stats[1].text}&quot;
+                &quot;{t.problem.stats[1].text}&quot;
               </p>
               <p className="text-xs uppercase font-bold text-marine-pink tracking-widest mt-4 pt-2 border-t border-gray-100">
-                {content.problem.stats[1].source}
+                {t.problem.stats[1].source}
               </p>
             </motion.div>
           </div>

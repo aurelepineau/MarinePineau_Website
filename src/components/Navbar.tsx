@@ -1,26 +1,28 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-
-const navLinks = [
-  { name: "Accueil", href: "#hero" },
-  { name: "À propos", href: "#about" }, // Moved to 2nd position
-  { name: "Problématique", href: "#problem" },
-  { name: "Services", href: "#services" }, // Parent for Offers
-  { name: "Contact", href: "#contact" },
-];
-
-// Sub-links for Services (for scroll handling logic if needed, or just semantic grouping)
-const serviceSubLinks = [
-  { name: "Leviers d'Impact", href: "#leviers" },
-  { name: "Détail des Offres", href: "#services-details" },
-];
+import { useTranslation } from "@/context/LanguageContext";
 
 export default function Navbar() {
+  const { t, language, toggleLanguage } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
+
+  const navLinks = [
+    { name: t.nav.home, href: "#hero" },
+    { name: t.nav.about, href: "#about" },
+    { name: t.nav.problem, href: "#problem" },
+    { name: t.nav.services, href: "#services" },
+    { name: t.nav.contact, href: "#contact" },
+  ];
+
+  // Sub-links for Services (for scroll handling logic if needed, or just semantic grouping)
+  const serviceSubLinks = [
+    { name: "Leviers d'Impact", href: "#leviers" },
+    { name: "Détail des Offres", href: "#services-details" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -90,7 +92,7 @@ export default function Navbar() {
 
           {/* Desktop Menu */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-1">
+            <div className="ml-10 flex items-center space-x-1">
               {navLinks.map((link) => {
                 const isActive = activeSection === link.href.substring(1);
                 return (
@@ -121,11 +123,28 @@ export default function Navbar() {
                   </a>
                 );
               })}
+
+              {/* Language Toggle (Desktop) */}
+              <button
+                onClick={toggleLanguage}
+                className="ml-4 px-3 py-1 rounded-full border border-marine-text/20 text-xs font-bold text-marine-text hover:bg-marine-text/5 transition-colors flex items-center gap-2"
+              >
+                <Globe size={14} />
+                <span>{language === "fr" ? "EN" : "FR"}</span>
+              </button>
             </div>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="-mr-2 flex md:hidden">
+          <div className="-mr-2 flex md:hidden items-center gap-4">
+            {/* Language Toggle (Mobile) */}
+            <button
+              onClick={toggleLanguage}
+              className="px-3 py-1 rounded-full border border-marine-text/20 text-xs font-bold text-marine-text hover:bg-marine-text/5 transition-colors"
+            >
+              {language === "fr" ? "EN" : "FR"}
+            </button>
+
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-marine-text hover:text-marine-blue focus:outline-none transition-colors"

@@ -1,10 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { content } from "@/lib/content";
+import { useTranslation } from "@/context/LanguageContext";
 import TestimonialCard from "@/components/TestimonialCard";
 
 export default function TestimonialsSection() {
+  const { t } = useTranslation();
+
   return (
     <section className="py-24 px-4 bg-[#D4BCA8] relative overflow-hidden">
       <div className="max-w-7xl mx-auto relative z-10">
@@ -12,11 +14,11 @@ export default function TestimonialsSection() {
           {/* Left Column: Quotes */}
           <div className="space-y-12">
             <TestimonialCard
-              text={content.testimonials.items[0].text}
+              text={t.testimonials.items[0].text}
               index={0}
             />
             <TestimonialCard
-              text={content.testimonials.items[1].text}
+              text={t.testimonials.items[1].text}
               index={1}
             />
           </div>
@@ -29,22 +31,19 @@ export default function TestimonialsSection() {
               viewport={{ once: true }}
               className="text-6xl md:text-8xl font-black text-white uppercase leading-[0.85] tracking-tighter text-wrap drop-shadow-sm"
             >
-              CE SONT
-              <br />
-              EUX QUI
-              <br />
-              EN
-              <br />
-              PARLENT
-              <br />
-              LE MIEUX
+              {t.testimonials.title.split("\n").map((line, i) => (
+                <span key={i}>
+                  {line}
+                  {i < t.testimonials.title.split("\n").length - 1 && <br />}
+                </span>
+              ))}
             </motion.h2>
           </div>
 
           {/* Right Column: Quote */}
           <div>
             <TestimonialCard
-              text={content.testimonials.items[2].text}
+              text={t.testimonials.items[2].text}
               index={2}
             />
           </div>

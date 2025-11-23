@@ -1,11 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { content } from "@/lib/content";
+import { useTranslation } from "@/context/LanguageContext";
 import Image from "next/image";
 import { Quote } from "lucide-react";
 
 export default function AboutSection() {
+  const { t } = useTranslation();
+
   return (
     <section
       id="about"
@@ -20,9 +22,9 @@ export default function AboutSection() {
             viewport={{ once: true }}
             className="text-8xl md:text-[10rem] font-black text-marine-blue leading-[0.8] tracking-tighter uppercase"
           >
-            {content.about.title.split("\n")[0]}
+            {t.about.title.split("\n")[0]}
             <br />
-            {content.about.title.split("\n")[1].replace(".", "")}
+            {t.about.title.split("\n")[1].replace(".", "")}
             <span className="text-marine-yellow">.</span>
           </motion.h2>
 
@@ -56,11 +58,11 @@ export default function AboutSection() {
             viewport={{ once: true }}
             className="text-2xl md:text-3xl font-bold text-marine-text mb-8 leading-snug"
           >
-            {content.about.subtitle}
+            {t.about.subtitle}
           </motion.h3>
 
           <div className="space-y-6 text-lg text-gray-600 leading-relaxed mb-12">
-            {content.about.bio.map((paragraph, index) => (
+            {t.about.bio.map((paragraph, index) => (
               <p key={index}>{paragraph}</p>
             ))}
           </div>
@@ -74,7 +76,7 @@ export default function AboutSection() {
           >
             <Quote className="absolute top-6 left-6 text-marine-blue/20 w-12 h-12" />
             <p className="text-xl md:text-2xl font-display font-medium text-marine-blue italic relative z-10 pl-8">
-              &quot;{content.about.quoteBox}&quot;
+              &quot;{t.about.quoteBox}&quot;
             </p>
           </motion.div>
         </div>

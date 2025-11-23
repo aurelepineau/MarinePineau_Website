@@ -1,11 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { content } from "@/lib/content";
+import { useTranslation } from "@/context/LanguageContext";
 import Link from "next/link";
 import Image from "next/image";
 
 export default function Hero() {
+  const { t } = useTranslation();
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-brand-blue text-white pt-20 pb-10">
       {/* Watermark Background */}
@@ -20,7 +22,7 @@ export default function Hero() {
           className="whitespace-nowrap opacity-10"
         >
           <span className="text-[15vw] md:text-[25vw] font-black uppercase tracking-tighter text-white">
-            ENSEMBLE
+            {t.hero.watermark}
           </span>
         </motion.div>
       </div>
@@ -35,22 +37,22 @@ export default function Hero() {
         >
           {/* Badge */}
           <div className="inline-block px-4 py-1 rounded-full border border-white/50 text-sm font-medium tracking-wider uppercase backdrop-blur-sm">
-            Facilitatrice de coopération
+            {t.hero.badge}
           </div>
 
           {/* Title */}
           <div className="relative">
             <h1 className="text-5xl md:text-7xl font-black leading-tight font-display">
-              Mieux travailler
+              {t.hero.titlePre}
               <span className="block text-brand-yellow font-black tracking-tighter relative z-10">
-                ENSEMBLE
+                {t.hero.titleHighlight}
               </span>
             </h1>
           </div>
 
           {/* Description */}
           <p className="text-lg md:text-xl font-light max-w-lg opacity-90 leading-relaxed">
-            {content.hero.description}
+            {t.hero.description}
           </p>
 
           {/* CTA */}
@@ -59,7 +61,7 @@ export default function Hero() {
               href="#contact"
               className="inline-flex items-center justify-center px-8 py-4 bg-white text-brand-blue font-bold rounded-full hover:bg-brand-cream hover:scale-105 transition-all duration-300 shadow-lg text-lg"
             >
-              Prendre RDV
+              {t.hero.cta}
             </Link>
           </div>
         </motion.div>

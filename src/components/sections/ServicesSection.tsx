@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, Variants } from "framer-motion";
-import { content } from "@/lib/content";
+import { useTranslation } from "@/context/LanguageContext";
 import ServiceCard from "@/components/ServiceCard";
 import Link from "next/link";
 import {
@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 
 export default function ServicesSection() {
+  const { t } = useTranslation();
   const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 40 },
     visible: {
@@ -31,13 +32,13 @@ export default function ServicesSection() {
         <div className="max-w-7xl mx-auto">
           <div className="mb-16">
             <h3 className="text-marine-yellow font-bold uppercase tracking-widest mb-2">
-              {content.services.leviersSubtitle}
+              {t.services.leviersSubtitle}
             </h3>
             <h2 className="text-6xl md:text-8xl font-black text-marine-blue leading-none uppercase">
-              {content.services.leviersTitle.split("\n").map((line, i) => (
+              {t.services.leviersTitle.split("\n").map((line, i) => (
                 <span key={i}>
                   {line}
-                  {i < content.services.leviersTitle.split("\n").length - 1 && (
+                  {i < t.services.leviersTitle.split("\n").length - 1 && (
                     <br />
                   )}
                 </span>
@@ -58,17 +59,17 @@ export default function ServicesSection() {
             >
               <div className="relative z-10 flex flex-col h-full justify-between">
                 <h3 className="text-2xl font-black uppercase mb-4">
-                  {content.services.bento[0].title.split("\n").map((line, i) => (
+                  {t.services.bento[0].title.split("\n").map((line, i) => (
                     <span key={i}>
                       {line}
                       {i <
-                        content.services.bento[0].title.split("\n").length -
+                        t.services.bento[0].title.split("\n").length -
                           1 && <br />}
                     </span>
                   ))}
                 </h3>
                 <p className="font-medium leading-relaxed text-lg">
-                  {content.services.bento[0].description}
+                  {t.services.bento[0].description}
                 </p>
               </div>
               <div className="absolute -right-4 -bottom-4 opacity-20 group-hover:scale-110 transition-transform duration-500">
@@ -88,17 +89,17 @@ export default function ServicesSection() {
             >
               <div className="relative z-10 max-w-md">
                 <h3 className="text-3xl font-black uppercase mb-4">
-                  {content.services.bento[1].title.split("\n").map((line, i) => (
+                  {t.services.bento[1].title.split("\n").map((line, i) => (
                     <span key={i}>
                       {line}
                       {i <
-                        content.services.bento[1].title.split("\n").length -
+                        t.services.bento[1].title.split("\n").length -
                           1 && <br />}
                     </span>
                   ))}
                 </h3>
                 <p className="text-xl font-medium leading-relaxed">
-                  {content.services.bento[1].description}
+                  {t.services.bento[1].description}
                 </p>
               </div>
               <div className="absolute right-8 top-1/2 -translate-y-1/2 opacity-10 group-hover:opacity-20 transition-opacity duration-500 z-10">
@@ -118,10 +119,10 @@ export default function ServicesSection() {
             >
               <div className="relative z-10 max-w-lg ml-auto text-right">
                 <h3 className="text-3xl font-black uppercase mb-4">
-                  {content.services.bento[2].title}
+                  {t.services.bento[2].title}
                 </h3>
                 <p className="text-xl font-medium leading-relaxed">
-                  {content.services.bento[2].description}
+                  {t.services.bento[2].description}
                 </p>
               </div>
               <div className="absolute left-8 top-1/2 -translate-y-1/2 opacity-20 group-hover:scale-110 transition-transform duration-500">
@@ -141,17 +142,17 @@ export default function ServicesSection() {
             >
               <div className="relative z-10 flex flex-col h-full justify-between">
                 <h3 className="text-2xl font-black uppercase mb-4">
-                  {content.services.bento[3].title.split("\n").map((line, i) => (
+                  {t.services.bento[3].title.split("\n").map((line, i) => (
                     <span key={i}>
                       {line}
                       {i <
-                        content.services.bento[3].title.split("\n").length -
+                        t.services.bento[3].title.split("\n").length -
                           1 && <br />}
                     </span>
                   ))}
                 </h3>
                 <p className="font-medium leading-relaxed text-lg">
-                  {content.services.bento[3].description}
+                  {t.services.bento[3].description}
                 </p>
               </div>
               <div className="absolute -right-4 -bottom-4 opacity-20 group-hover:scale-110 transition-transform duration-500 z-10">
@@ -176,13 +177,13 @@ export default function ServicesSection() {
             className="mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-black text-marine-blue uppercase mb-6 leading-none">
-              {content.services.detailTitle}
+              {t.services.detailTitle}
             </h2>
             <div className="w-20 h-1 bg-marine-yellow"></div>
           </motion.div>
 
           <div className="flex flex-col gap-6 mb-24">
-            {content.services.items.map((service, index) => (
+            {t.services.items.map((service, index) => (
               <div key={index} className="w-full" id={`offer-${service.id}`}>
                 <ServiceCard
                   title={service.title}
@@ -197,7 +198,7 @@ export default function ServicesSection() {
 
           {/* Case Studies / Realisations */}
           <div className="space-y-24">
-            {content.caseStudies.map((study, index) => (
+            {t.caseStudies.map((study, index) => (
               <motion.div
                 key={index}
                 initial="hidden"
@@ -218,7 +219,7 @@ export default function ServicesSection() {
 
                   <div className="bg-white/10 p-6 rounded-2xl backdrop-blur-sm mb-8">
                     <h5 className="font-bold mb-4 uppercase text-xs tracking-widest border-b border-white/20 pb-2">
-                      Résultats
+                      {study.resultsLabel || "Résultats"}
                     </h5>
                     <ul className="space-y-3">
                       {study.results.map((result, i) => (
@@ -235,7 +236,7 @@ export default function ServicesSection() {
                   </div>
 
                   <div className="inline-block bg-marine-yellow text-marine-text px-6 py-2 rounded-full font-bold self-start shadow-lg transform -rotate-1">
-                    CLIENT : {study.client}
+                    {study.clientLabel || "CLIENT"} : {study.client}
                   </div>
                 </div>
 
@@ -263,7 +264,7 @@ export default function ServicesSection() {
                     href="#contact"
                     className="inline-flex items-center text-marine-pink font-bold hover:text-marine-blue transition-colors group"
                   >
-                    Discuter d&apos;un projet similaire{" "}
+                    {study.cta || "Discuter d'un projet similaire"}
                     <ArrowRight className="ml-2 w-5 h-5 transform group-hover:translate-x-1 transition-transform" />
                   </Link>
                 </div>
