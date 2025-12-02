@@ -83,7 +83,9 @@ export default function ContactSection() {
                 <Linkedin className="mr-3" /> {t.contact.links.linkedin}
               </a>
               <a
-                href="#"
+                href="https://calendly.com/marine-pineau/30min?month=2025-12"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full flex items-center justify-center px-8 py-4 bg-marine-yellow text-marine-text font-bold rounded-2xl hover:bg-marine-yellow/90 transition-all transform hover:scale-105 shadow-lg text-lg"
               >
                 <Calendar className="mr-3" /> {t.contact.links.appointment}

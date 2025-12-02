@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { useTranslation } from "@/context/LanguageContext";
-import Link from "next/link";
 import Image from "next/image";
 
 export default function Hero() {
@@ -57,12 +56,14 @@ export default function Hero() {
 
           {/* CTA */}
           <div>
-            <Link
-              href="#contact"
+            <a
+              href="https://calendly.com/marine-pineau/30min?month=2025-12"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-8 py-4 bg-white text-brand-blue font-bold rounded-full hover:bg-brand-cream hover:scale-105 transition-all duration-300 shadow-lg text-lg"
             >
               {t.hero.cta}
-            </Link>
+            </a>
           </div>
         </motion.div>
 
