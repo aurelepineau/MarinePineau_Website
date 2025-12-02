@@ -57,7 +57,7 @@ export default function Hero() {
           {/* CTA */}
           <div>
             <a
-              href="https://calendly.com/marine-pineau/30min?month=2025-12"
+              href="https://calendly.com/marine-pineau/30min"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-8 py-4 bg-white text-brand-blue font-bold rounded-full hover:bg-brand-cream hover:scale-105 transition-all duration-300 shadow-lg text-lg"

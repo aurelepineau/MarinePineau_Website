@@ -50,3 +50,4 @@ export default function ObfuscatedEmail({ email, label = "Me contacter par email
   );
 }
 
+
