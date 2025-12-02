@@ -5,6 +5,7 @@ import AboutSection from "@/components/sections/AboutSection";
 import ProblemSection from "@/components/sections/ProblemSection";
 import MethodologySection from "@/components/sections/MethodologySection";
 import ServicesSection from "@/components/sections/ServicesSection";
+import ClientMarquee from "@/components/ClientMarquee";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import ContactSection from "@/components/sections/ContactSection";
 
@@ -27,6 +28,9 @@ export default function Home() {
 
       {/* SECTION: SERVICES (Leviers d'Impact + Details) */}
       <ServicesSection />
+
+      {/* SECTION: CLIENTS */}
+      <ClientMarquee />
 
       {/* SECTION: TESTIMONIALS */}
       <TestimonialsSection />

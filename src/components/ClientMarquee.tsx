@@ -1,19 +1,32 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslation } from "@/context/LanguageContext";
 
 const clients = [
-  { name: "Kujten", logo: "Kujten" },
-  { name: "Client 2", logo: "Partenaire" },
-  { name: "Client 3", logo: "Entreprise" },
-  { name: "Client 4", logo: "Organisation" },
-  { name: "Client 5", logo: "Association" },
-  { name: "Client 6", logo: "Collectivité" },
+  { name: "Chanel", logo: "CHANEL" },
+  { name: "Ticket for Change", logo: "TICKET FOR CHANGE" },
+  { name: "PwC", logo: "pwc" },
+  { name: "Kujten", logo: "KUJTEN" },
+  { name: "Safran", logo: "SAFRAN" },
+  { name: "Bluelink", logo: "BLUELINK" },
+  { name: "Hopscotch Event", logo: "HOPSCOTCH EVENT" },
+  { name: "EDF", logo: "EDF" },
+  { name: "Rte", logo: "Rte" },
 ];
 
 export default function ClientMarquee() {
+  const { t } = useTranslation();
+
   return (
-    <div className="py-10 bg-marine-beige overflow-hidden relative">
+    <div className="py-12 bg-marine-beige overflow-hidden relative">
+      <div className="max-w-7xl mx-auto mb-12 px-4 text-center">
+        <h3 className="text-xl md:text-2xl font-black uppercase tracking-wider text-marine-blue mb-6">
+          {t.clientsTitle || "Ils m'ont fait confiance"}
+        </h3>
+        <div className="w-24 h-1 bg-marine-yellow mx-auto"></div>
+      </div>
+
       <div className="flex gap-10 items-center">
         <motion.div
           className="flex gap-16 items-center flex-nowrap min-w-full"

@@ -39,14 +39,14 @@ export default function MethodologySection() {
     "bg-marine-blue", // Clarification (Bleu)
     "bg-marine-pink", // Design (Rose)
     "bg-marine-blue", // Présentation (Bleu)
-    "bg-purple-400", // Animation (Violet - nouvelle couleur ajoutée au thème implicitement)
+    "bg-orange-300", // Animation (Orange/Beige - nouvelle couleur ajoutée au thème implicitement)
     "bg-marine-blue", // Partage (Bleu)
   ];
 
   return (
     <section
       id="methodology"
-      className="py-32 px-4 bg-marine-beige relative overflow-hidden"
+      className="py-32 px-4 bg-white relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center mb-32">

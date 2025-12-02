@@ -5,6 +5,7 @@ import { LucideIcon } from "lucide-react";
 
 interface ServiceCardProps {
   title: string;
+  subtitle?: string;
   description: string[];
   color: string;
   index: number;
@@ -13,6 +14,7 @@ interface ServiceCardProps {
 
 export default function ServiceCard({
   title,
+  subtitle,
   description,
   color,
   index,
@@ -59,9 +61,14 @@ export default function ServiceCard({
               <Icon size={32} strokeWidth={2} />
             </div>
 
-            <h3 className="text-2xl font-bold mb-6 uppercase leading-tight">
+            <h3 className="text-2xl font-bold mb-2 uppercase leading-tight">
               {title}
             </h3>
+            {subtitle && (
+              <p className="text-lg font-medium mb-6 opacity-90 italic">
+                {subtitle}
+              </p>
+            )}
           </div>
 
           <div className="lg:w-2/3">

@@ -187,6 +187,7 @@ export default function ServicesSection() {
               <div key={index} className="w-full" id={`offer-${service.id}`}>
                 <ServiceCard
                   title={service.title}
+                  subtitle={service.subtitle}
                   description={service.description}
                   color={service.color}
                   index={index}
@@ -197,6 +198,19 @@ export default function ServicesSection() {
           </div>
 
           {/* Case Studies / Realisations */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+            className="mb-16 mt-32"
+          >
+            <h2 className="text-4xl md:text-5xl font-black text-marine-blue uppercase mb-6 leading-none">
+              {t.caseStudiesTitle || "RÉALISATIONS"}
+            </h2>
+            <div className="w-20 h-1 bg-marine-yellow"></div>
+          </motion.div>
+
           <div className="space-y-24">
             {t.caseStudies.map((study, index) => (
               <motion.div

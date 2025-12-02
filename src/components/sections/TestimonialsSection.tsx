@@ -41,10 +41,14 @@ export default function TestimonialsSection() {
           </div>
 
           {/* Right Column: Quote */}
-          <div>
+          <div className="space-y-12">
             <TestimonialCard
               text={t.testimonials.items[2].text}
               index={2}
+            />
+            <TestimonialCard
+              text={t.testimonials.items[3].text}
+              index={3}
             />
           </div>
         </div>
