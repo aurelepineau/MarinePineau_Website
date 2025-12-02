@@ -78,7 +78,7 @@ export default function Hero() {
             <div className="relative w-full h-full">
               <Image
                 src="/vie-equipe.jpg"
-                alt="Vie d'équipe"
+                alt="Atelier de cohésion d'équipe et dynamique collective"
                 fill
                 className="object-cover object-top"
               />
@@ -95,7 +95,7 @@ export default function Hero() {
             <div className="relative w-full h-full grayscale hover:grayscale-0 transition-all duration-500">
               <Image
                 src="/architecture.jpg"
-                alt="Architecture & Structure"
+                alt="Structure et construction collective symbolisant la coopération"
                 fill
                 className="object-cover"
               />

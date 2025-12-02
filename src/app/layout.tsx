@@ -16,6 +16,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://marinepineau.pro'),
   title: "Marine Pineau | Facilitatrice de Coopération",
   description:
     "J'accompagne les managers et les équipes pour mieux travailler ensemble. Formations, ateliers, coaching d'équipe et séminaires.",
@@ -36,14 +37,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "fr_FR",
-    url: "https://marinepineau.fr", // Placeholder URL
+    url: "https://marinepineau.pro",
     title: "Marine Pineau | Facilitatrice de Coopération",
     description:
       "J'accompagne les managers et les équipes pour mieux travailler ensemble.",
     siteName: "Marine Pineau",
     images: [
       {
-        url: "/photo-marine.jpg", // Using the profile photo as OG image for now
+        url: "/photo-marine.jpg",
         width: 800,
         height: 800,
         alt: "Marine Pineau",
@@ -70,11 +71,43 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: 'Marine Pineau',
+    jobTitle: 'Facilitatrice de Coopération',
+    url: 'https://marinepineau.pro',
+    sameAs: [
+      'https://www.linkedin.com/in/marine-pineau-61986127/'
+    ],
+    makesOffer: [
+      {
+        "@type": "Offer",
+        "name": "Coaching d'équipe",
+        "description": "Améliorer la communication, renforcer la cohésion et faire émerger des règles de fonctionnement partagées."
+      },
+      {
+        "@type": "Offer",
+        "name": "Formation Management Coopératif",
+        "description": "Développer un leadership responsable et structurer une dynamique d'équipe efficace."
+      },
+      {
+        "@type": "Offer",
+        "name": "Ateliers de Prévention au Travail",
+        "description": "Sensibiliser aux violences, comportements inappropriés et RPS."
+      }
+    ]
+  };
+
   return (
     <html lang="fr" className="scroll-smooth">
       <body
         className={`${openSans.variable} ${montserrat.variable} antialiased bg-marine-beige text-marine-text`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <LanguageProvider>
           <Navbar />
           <main className="min-h-screen pt-20">{children}</main>

@@ -8,6 +8,7 @@ import ServicesSection from "@/components/sections/ServicesSection";
 import ClientMarquee from "@/components/ClientMarquee";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import ContactSection from "@/components/sections/ContactSection";
+import FAQSection from "@/components/sections/FAQSection";
 
 export default function Home() {
   return (
@@ -34,6 +35,9 @@ export default function Home() {
 
       {/* SECTION: TESTIMONIALS */}
       <TestimonialsSection />
+
+      {/* SECTION: FAQ */}
+      <FAQSection />
 
       {/* SECTION: CONTACT */}
       <ContactSection />

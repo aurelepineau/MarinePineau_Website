@@ -4,6 +4,7 @@ import { motion, Variants } from "framer-motion";
 import { useTranslation } from "@/context/LanguageContext";
 import Image from "next/image";
 import { Mail, Linkedin, Calendar } from "lucide-react";
+import ObfuscatedEmail from "../ObfuscatedEmail";
 
 export default function ContactSection() {
   const { t } = useTranslation();
@@ -46,7 +47,7 @@ export default function ContactSection() {
             >
               <Image
                 src="/marine-contact.jpg"
-                alt="Marine Contact"
+                alt="Marine Pineau, Facilitatrice de Coopération"
                 fill
                 className="object-cover object-top"
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -69,12 +70,7 @@ export default function ContactSection() {
             </p>
 
             <div className="space-y-4 mt-8 mb-8">
-              <a
-                href="mailto:marine.pineau.f@gmail.com"
-                className="flex items-center text-xl font-light hover:text-marine-yellow transition-colors"
-              >
-                <Mail className="mr-4 w-6 h-6" /> marine.pineau.f@gmail.com
-              </a>
+              <ObfuscatedEmail email="marine.pineau.f@gmail.com" />
             </div>
 
             <div className="flex flex-col gap-4">

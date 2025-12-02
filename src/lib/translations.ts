@@ -253,6 +253,32 @@ export const translations = {
         },
       ],
     },
+    faq: {
+      title: "Questions\nFréquentes",
+      items: [
+        {
+          question:
+            "Quelle est la différence entre coaching d'équipe et formation ?",
+          answer:
+            "La formation vise à transmettre des compétences spécifiques (savoir-faire), tandis que le coaching d'équipe accompagne le groupe dans la résolution de ses propres problèmes et l'amélioration de ses interactions (savoir-être et faire ensemble).",
+        },
+        {
+          question: "Intervenez-vous partout en France ?",
+          answer:
+            "Oui, je suis basée à Paris mais je me déplace dans toute la France pour les séminaires, formations et accompagnements d'équipes. Certaines sessions de coaching peuvent aussi se faire en distanciel.",
+        },
+        {
+          question: "Comment se déroule un accompagnement sur-mesure ?",
+          answer:
+            "Tout commence par une phase de diagnostic et d'écoute pour comprendre vos enjeux. Ensuite, je conçois un parcours adapté (ateliers, séminaires, coaching) que nous validons ensemble avant le déploiement.",
+        },
+        {
+          question: "Vos formations sont-elles éligibles aux financements ?",
+          answer:
+            "Cela dépend du type d'intervention et de votre OPCO. N'hésitez pas à me contacter pour étudier la faisabilité de prise en charge de votre projet de formation.",
+        },
+      ],
+    },
     contact: {
       title: "CONTACT",
       text: "Envie d'aller plus loin ?\nJe vous propose un échange.",
@@ -507,6 +533,32 @@ export const translations = {
         },
         {
           text: "I particularly appreciated Marine's gentleness, who knew how to lead the group on these delicate subjects with a lot of respect and assertiveness.",
+        },
+      ],
+    },
+    faq: {
+      title: "Frequently Asked\nQuestions",
+      items: [
+        {
+          question:
+            "What is the difference between team coaching and training?",
+          answer:
+            "Training aims to transmit specific skills (know-how), while team coaching supports the group in solving its own problems and improving its interactions (soft skills and working together).",
+        },
+        {
+          question: "Do you intervene everywhere in France?",
+          answer:
+            "Yes, I am based in Paris but I travel throughout France for seminars, training, and team support. Some coaching sessions can also be done remotely.",
+        },
+        {
+          question: "How does a tailor-made support process work?",
+          answer:
+            "It all starts with a diagnostic and listening phase to understand your challenges. Then, I design a suitable path (workshops, seminars, coaching) that we validate together before deployment.",
+        },
+        {
+          question: "Are your training courses eligible for funding?",
+          answer:
+            "It depends on the type of intervention and your OPCO. Do not hesitate to contact me to study the feasibility of covering your training project.",
         },
       ],
     },
